@@ -80,16 +80,16 @@ class MLP(nn.Module):
         super().__init__()
         self.mlp_stack = nn.Sequential(
             # YOUR CODE HERE
-            nn.Linear(no_features, no_hidden), # input-->hidden layer 1
+            nn.Linear(no_features, no_hidden[0]), # input-->hidden layer 1
             nn.ReLU(), # ReLU
             nn.Dropout(p=0.2), # dorupout of 0.2
-            nn.Linear(no_hidden, no_hidden), # hidden layer 1-->hidden layer 2
+            nn.Linear(no_hidden[0], no_hidden[1]), # hidden layer 1-->hidden layer 2
             nn.ReLU(),
             nn.Dropout(p=0.2),
-            nn.Linear(no_hidden, no_hidden), # hidden layer 2-->hidden layer 3
+            nn.Linear(no_hidden[1], no_hidden[2]), # hidden layer 2-->hidden layer 3
             nn.ReLU(),
             nn.Dropout(p=0.2),
-            nn.Linear(no_hidden, no_labels), # hidden layer 3-->output
+            nn.Linear(no_hidden[2], no_labels), # hidden layer 3-->output
             nn.Sigmoid()
         )
     
