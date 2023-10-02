@@ -43,7 +43,7 @@ _module_src: models.category_embedding
 _model_name: CategoryEmbeddingModel
 _backbone_name: CategoryEmbeddingBackbone
 _config_name: CategoryEmbeddingModelConfig
-layers: 10-50-1
+layers: '50'
 activation: LeakyReLU
 use_batch_norm: false
 initialization: kaiming
